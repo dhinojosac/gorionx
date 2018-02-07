@@ -17,16 +17,18 @@ La forma simple de usar orionxtools es:
 ```go
   package main
 
-  // Importar paquete orionxctools
+  // Importar paquete orionxctools.
   import "github.com/dhinojosac/orionxclient/orionxctools"
 
+  // Agregar Secret Key y Api Key.
   const (
-    API_KEY = "put your API_KEY here"
-    KEY     = "put your KEY here"
+    API_KEY = "copiar y pegar Api Key"
+    KEY     = "copiar y pegar Secret Key"
   )
 
   func main() {
 
+  	// Agregar las queries que deseas.
     queries := []string{
       `{market(code:"CHACLP"){
         lastTrade{
@@ -41,7 +43,7 @@ La forma simple de usar orionxtools es:
     }
 
     for _, query := range queries {
-      orionxctools.MakeRequest(KEY, API_KEY, query)
+      orionxctools.MakeRequest(KEY, API_KEY, query) // Realiza las peticiones a la API.
     }
   }  
 ```
