@@ -9,7 +9,7 @@ Paso a paso
 * Primero debes obtener un KEY en [API](https://orionx.io/developers/keys). Hacer click en el botón CREATE KEY.
 * Dar los permisos correspondientes a la Key.
 * Agregar la Secret Key y la Api Key en el código de ejemplo.
-* Obtener la librería usando el comando ```go get github.com/dhinojosac/orionxclient/orionxctools```
+* Obtener la librería usando el comando ```go get github.com/dhinojosac/orionxctools```
 
 #### Ejemplo
 
@@ -19,7 +19,7 @@ La forma simple de usar orionxtools es:
   package main
 
   // Importar paquete orionxctools.
-  import "github.com/dhinojosac/orionxclient/orionxctools"
+  import "github.com/dhinojosac/orionxctools"
 
   // Agregar Secret Key y Api Key.
   const (
