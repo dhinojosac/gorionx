@@ -9,6 +9,7 @@ Paso a paso
 * Primero debes obtener un KEY en [API](https://orionx.io/developers/keys). Hacer click en el botón CREATE KEY.
 * Dar los permisos correspondientes a la Key.
 * Agregar la Secret Key y la Api Key en el código de ejemplo.
+* Obtener la librería usando el comando ```go get github.com/dhinojosac/orionxclient/orionxctools```
 
 #### Ejemplo
 
