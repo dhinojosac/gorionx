@@ -1,16 +1,23 @@
 
 # orionxctools 
 
-This package was created to facilitate queries to the oriox API.
+Este paquete fue creado para facilitar las consultas a la api de orionx.
 
+Paso a paso
+============
 
-#### Example
+* Primero debes obtener un KEY en [API](https://orionx.io/developers/keys). Hacer click en el botón CREATE KEY.
+* Dar los permisos correspondientes a la Key.
+* Agregar la Secret Key y la Api Key en el código de ejemplo.
 
-The simplest way to use orionxtools is:
+#### Ejemplo
+
+La forma simple de usar orionxtools es:
 
 ```go
   package main
 
+  // Importar paquete orionxctools
   import "github.com/dhinojosac/orionxclient/orionxctools"
 
   const (
@@ -34,7 +41,21 @@ The simplest way to use orionxtools is:
     }
 
     for _, query := range queries {
-      client.MakeRequest(KEY, API_KEY, query)
+      orionxctools.MakeRequest(KEY, API_KEY, query)
     }
   }  
 ```
+
+Si las request fueron exitosas, la salida es:
+```
+Status: 200 OK
+Body: {"data":{"market":{"lastTrade":{"price":760}}}}
+Status: 200 OK
+Body: {"data":{"cha":{"spread":17,"mid":771}}}
+```
+
+Autor
+=====
+
+* Diego Hinojosa Cordova [dhinojosac](http://github.com/dhinojosac)
+
