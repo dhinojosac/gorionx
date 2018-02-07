@@ -1,14 +1,9 @@
-
-# orionxctools 
-
-This package was created to facilitate queries to the oriox API.
-
-
-#### Example
+/*
+Package orionxctools implements some functions to make requests 
+to the Orionx api
 
 The simplest way to use orionxtools is:
-
-```go
+  
   package main
 
   import "github.com/dhinojosac/orionxclient/orionxctools"
@@ -37,4 +32,12 @@ The simplest way to use orionxtools is:
       client.MakeRequest(KEY, API_KEY, query)
     }
   }  
-```
+
+Output:
+  Status: 200 OK
+  Body: {"data":{"market":{"lastTrade":{"price":752}}}}
+  Status: 200 OK
+  Body: {"data":{"cha":{"spread":20,"mid":764}}}
+
+*/
+package orionxctools
