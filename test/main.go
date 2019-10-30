@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	orionxctools "github.com/dhinojosac/orionx-go-client"
+	orionxctools "github.com/dhinojosac/gorionx"
 )
 
 // The KEY and API KEY were stored in environment variables.

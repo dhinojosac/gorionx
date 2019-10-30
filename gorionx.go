@@ -1,4 +1,4 @@
-package orionx-go-client
+package gorionx
 
 import(
 	"bytes"

@@ -1,12 +1,12 @@
 /*
-Package orionxctools implements some functions to make requests 
+Package orionxctools implements some functions to make requests
 to the Orionx api
 
 The simplest way to use orionxtools is:
-  
+
   package main
 
-  import "github.com/dhinojosac/orionxclient/orionxctools"
+  import "github.com/dhinojosac/gorionx"
 
   const (
     API_KEY = "put your API_KEY here"
@@ -31,7 +31,7 @@ The simplest way to use orionxtools is:
     for _, query := range queries {
       client.MakeRequest(KEY, API_KEY, query)
     }
-  }  
+  }
 
 Output:
   Status: 200 OK
@@ -40,4 +40,4 @@ Output:
   Body: {"data":{"cha":{"spread":20,"mid":764}}}
 
 */
-package orionx-go-client
+package gorionx
