@@ -25,22 +25,74 @@ func main() {
 	if !ok {
 		log.Fatal("There are not present ORIONX_API_KEY env var\n")
 	}
-	fmt.Printf("api: %s \napi_key: %s", key, apiKey)
+	fmt.Printf("api: %s \napi_key: %s\n\n", key, apiKey)
 
-	// Generate the queries you need
+	/*
+		queries := []string{
+			`{market(code:"CHACLP"){
+				code
+				name
+				lastTrade{
+					price
+				}
+			  }}`,
+			`{cha:marketOrderBook (marketCode:"CHACLP") {
+				spread
+				mid
+				}}`,
+			`{marketStats(marketCode: "CHACLP", aggregation: d1, limit: 20) {
+				_id
+				open
+				close
+				high
+				low
+				variation
+				average
+				volume
+				volumeSecondary
+				count
+				fromDate
+				toDate
+			  }}`,
+			  		`{me{
+			wallets{
+				_id
+				balance
+				availableBalance
+				unconfirmedBalance
+			}
+		}}`,
+		}
+
+		for _, query := range queries {
+			orionxctools.MakeRequest(key, apiKey, query) // Performs API requests
+		}
+	*/
+
 	queries := []string{
+
 		`{market(code:"CHACLP"){
+			code
+			name
 			lastTrade{
 				price
 			}
 		  }}`,
-		`{cha:marketOrderBook (marketCode:"CHACLP") {
-			spread
-			mid
-			}}`,
 	}
 
 	for _, query := range queries {
 		orionxctools.MakeRequest(key, apiKey, query) // Performs API requests
 	}
+
+	mutations := []string{
+		`{placeMarketOrder(marketCode:"CHACLP", amount:100, sell: True, twoFactorCode:321683){
+			_id
+			__typename
+		  }}`,
+	}
+
+	for _, mutation := range mutations {
+		orionxctools.MakeRequestMutation(key, apiKey, mutation) // Performs API requests
+	}
+
 }
