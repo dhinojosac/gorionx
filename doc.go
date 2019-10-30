@@ -40,4 +40,4 @@ Output:
   Body: {"data":{"cha":{"spread":20,"mid":764}}}
 
 */
-package orionxctools
+package orionx-go-client

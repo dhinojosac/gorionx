@@ -1,4 +1,4 @@
-package orionxctools
+package orionx-go-client
 
 import(
 	"bytes"

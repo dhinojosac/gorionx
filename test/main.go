@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/dhinojosac/orionxctools"
+	orionxctools "github.com/dhinojosac/orionx-go-client"
 )
 
 // The KEY and API KEY were stored in environment variables.
@@ -30,15 +30,14 @@ func main() {
 	// Generate the queries you need
 	queries := []string{
 		`{market(code:"CHACLP"){
-	lastTrade{
-		price
-	}
-	}
-	}`,
+			lastTrade{
+				price
+			}
+		  }}`,
 		`{cha:marketOrderBook (marketCode:"CHACLP") {
-		spread
-		mid
-	}}`,
+			spread
+			mid
+			}}`,
 	}
 
 	for _, query := range queries {
