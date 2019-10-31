@@ -80,6 +80,8 @@ func main() {
 		  }}`,
 	}
 
+	fmt.Println()
+
 	for _, query := range queries {
 		orionxctools.MakeRequest(key, apiKey, query) // Performs API requests
 	}
