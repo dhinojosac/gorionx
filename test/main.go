@@ -69,8 +69,26 @@ func main() {
 		}
 	*/
 
-	queries := []string{
+	/*
+		//wallets
+			query {
+			  me {
+			    wallets {
+			      _id
+			      balance
+			      availableBalance
+			      unconfirmedBalance
+			       currency{
+			        code
+			      }
 
+			    }
+			  }
+			}
+	*/
+
+	queries := []string{
+		`{me{_id}}`,
 		`{market(code:"CHACLP"){
 			code
 			name
@@ -86,15 +104,37 @@ func main() {
 		orionxctools.MakeRequest(key, apiKey, query) // Performs API requests
 	}
 
+	/*
+		//market order
+		mutations := []string{
+			`mutation {placeMarketOrder(marketCode:"CHACLP", amount:520, sell: false){
+				_id
+				__typename
+			  }}`,
+		}
+	*/
+
+	//limit order
 	mutations := []string{
-		`{placeMarketOrder(marketCode:"CHACLP", amount:100, sell: True, twoFactorCode:321683){
-			_id
-			__typename
-		  }}`,
+		`mutation {placeLimitOrder(marketCode:"CHACLP", amount:1400000000, limitPrice:40, sell:true){
+				_id
+				__typename
+			  }}`,
 	}
 
+	/*
+		//Cancel order by id
+		mutations := []string{
+			`mutation {cancelOrder(orderId:"mf248tMuoFztzt7Jg"){
+				_id
+				__typename
+				status
+			  }}`,
+		}
+	*/
+
 	for _, mutation := range mutations {
-		orionxctools.MakeRequestMutation(key, apiKey, mutation) // Performs API requests
+		orionxctools.MakeRequest(key, apiKey, mutation) // Performs API requests
 	}
 
 }
